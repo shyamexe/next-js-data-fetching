@@ -4,6 +4,7 @@
 - Loading and Error States
 -  JSON Server Setup
 - Caching Data
+- Opting Out of Caching
 
 -------------------------
 

@@ -1,3 +1,5 @@
+import { cookies } from "next/headers";
+
 type Product = {
     id:number,
     title:string,
@@ -7,7 +9,16 @@ type Product = {
 
 
 export default async function ProductsPage(){
-    const response = await fetch('http://localhost:3001/products');
+    const detailsResponse=await fetch("http://localhost:3001/products/1");
+    const details =await detailsResponse.json()
+    
+    const cookieStore =cookies();
+    cookieStore.get("theme");// after use dynamic function next js avoid caching 
+
+
+    const response = await fetch('http://localhost:3001/products',{
+        // cache: "no-store"  /* Opting Out of Caching*/
+    });
     const products = await response.json();
 
     return (
@@ -21,6 +32,7 @@ export default async function ProductsPage(){
                     </h2>
                     <p>{product.description}</p>
                     <p className="text-lg font-medium">{product.price}</p>
+                    <p>{details.price}</p>
                 </li>
             ))}
         </ul>
