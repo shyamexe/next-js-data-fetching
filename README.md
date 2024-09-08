@@ -7,7 +7,7 @@
 - Opting Out of Caching
 - React 
 - Time based Data Revalidation
-
+- Client-side Data Fetching
 -------------------------
 
 
