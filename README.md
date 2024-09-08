@@ -5,6 +5,7 @@
 -  JSON Server Setup
 - Caching Data
 - Opting Out of Caching
+- React Memoization
 
 -------------------------
 
