@@ -1,6 +1,8 @@
 # Next js Data Fetching
 
 - Fetching Data with Server Components
+- Loading and Error States
+
 
 -------------------------
 
