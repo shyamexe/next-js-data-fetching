@@ -3,7 +3,7 @@
 - Fetching Data with Server Components
 - Loading and Error States
 -  JSON Server Setup
-
+- Caching Data
 
 -------------------------
 
