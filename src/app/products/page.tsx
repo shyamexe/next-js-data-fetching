@@ -13,11 +13,11 @@ export default async function ProductsPage(){
     const details =await detailsResponse.json()
     
     const cookieStore =cookies();
-    cookieStore.get("theme");// after use dynamic function next js avoid caching 
+    cookieStore.get("theme");//2 after use dynamic function next js avoid caching 
 
 
     const response = await fetch('http://localhost:3001/products',{
-        // cache: "no-store"  /* Opting Out of Caching*/
+        // cache: "no-store"  /*1 Opting Out of Caching*/
     });
     const products = await response.json();
 
