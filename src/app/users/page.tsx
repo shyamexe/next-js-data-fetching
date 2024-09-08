@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 type User ={
     id: number,
     name: string,
@@ -9,7 +7,7 @@ type User ={
 };
 export default async function UsersPage(){
     await new Promise((resolve)=> setTimeout(resolve,2000));
-    const response = await fetch("https://jsonplaceholder.typicode.com/users12");
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
     const users = await response.json();
     console.log(users);
     return (
