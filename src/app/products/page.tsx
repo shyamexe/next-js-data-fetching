@@ -1,4 +1,4 @@
-import { cookies } from "next/headers";
+// import { cookies } from "next/headers";
 
 type Product = {
     id:number,
@@ -9,15 +9,18 @@ type Product = {
 
 
 export default async function ProductsPage(){
-    const detailsResponse=await fetch("http://localhost:3001/products/1");
-    const details =await detailsResponse.json()
+    // const detailsResponse=await fetch("http://localhost:3001/products/1");
+    // const details =await detailsResponse.json()
     
-    const cookieStore =cookies();
-    cookieStore.get("theme");//2 after use dynamic function next js avoid caching 
+    //3 const cookieStore =cookies();
+    //3 cookieStore.get("theme");//2 after use dynamic function next js avoid caching 
 
 
     const response = await fetch('http://localhost:3001/products',{
         // cache: "no-store"  /*1 Opting Out of Caching*/
+        next:{
+            revalidate:10
+        }
     });
     const products = await response.json();
 
@@ -32,7 +35,7 @@ export default async function ProductsPage(){
                     </h2>
                     <p>{product.description}</p>
                     <p className="text-lg font-medium">{product.price}</p>
-                    <p>{details.price}</p>
+                 
                 </li>
             ))}
         </ul>
